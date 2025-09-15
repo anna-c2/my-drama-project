@@ -1,0 +1,25 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    position: relative;
+    width: 100vw;
+    /* background: pink; */
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: 4rem;
+    padding: 0rem 3rem 1rem;
+    border-bottom: 1px solid #5b5b5e;
+    background: #1e1e1e;
+}
+
+.logo{
+    width: clamp(100px, 8vw, 220px);
+}
+
+.search{
+    width: 100vw;
+}

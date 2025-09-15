@@ -1,0 +1,312 @@
+.intro{
+  display: flex;
+  position: relative;
+}
+.main{
+}
+.poster {
+  position: relative;
+  width: 100%;
+  z-index: 0;
+  overflow: hidden;
+  height: 80vh;
+  width: 35vw;
+  background: var(--parallax-url, url("/fallback.jpg")) left center no-repeat;
+  background-size: auto 110%;
+  margin-left: 3rem;
+  /* border-left: 3px solid white; */
+}
+
+.poster::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 150px;
+  height: 100%;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, #2d2d30 100%);
+  pointer-events: none;
+}
+
+.popup{
+  z-index: 1;
+  background: rgb(61, 61, 61);
+  height: fit-content;
+  position: relative;
+  padding: 3rem;
+  /* width: 100vw; */
+}
+
+.history{
+  width: 50vw;
+  line-height: 1.7;
+}
+
+.time{
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+.icon{
+  /* object-fit: none; */
+  height: 20px;
+}
+.infoContainer{
+  display: flex;
+  gap: 0.5rem;
+
+}
+
+.title{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-top: 50px;
+}
+
+h2{
+  padding-top: 20px;
+}
+
+strong{
+  color: #b3e2e0;
+}
+
+.description{
+  width: 60vw;
+  padding-left: 2rem;
+}
+
+
+/* From Uiverse.io by ryota1231 */ 
+.animatedButton {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 10px 40px;
+  border: 4px solid;
+  border-color: transparent;
+  font-size: 14px;
+  /* background-color: ; */
+  border-radius: 100px;
+  font-weight: 600;
+  color: #1f387e;
+  box-shadow: 0 0 0 2px #ffffff;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  margin: 30px 0;
+}
+
+.animatedButton svg {
+  position: absolute;
+  width: 24px;
+  fill: #1f387e;
+  z-index: 9;
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.animatedButton .arr1 {
+  right: 5px;
+}
+
+.animatedButton .arr2 {
+  left: -10%;
+}
+
+.animatedButton .circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  background-color: #c5e5e4;
+  border-radius: 50%;
+  opacity: 0;
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.animatedButton .text {
+  position: relative;
+  z-index: 1;
+  transform: translateX(-12px);
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.animatedButton:hover {
+  box-shadow: 0 0 0 12px transparent;
+  color: #212121;
+  border-radius: 12px;
+}
+
+.animatedButton:hover .arr1 {
+  right: -25%;
+}
+
+.animatedButton:hover .arr2 {
+  left: 10px;
+}
+
+.animatedButton:hover .text {
+  transform: translateX(12px);
+}
+
+.animatedButton:hover svg {
+  fill: #1f387e;
+}
+
+.animatedButton:active {
+  scale: 0.95;
+  box-shadow: 0 0 0 4px greenyellow;
+}
+
+.animatedButton:hover .circle {
+  width: 220px;
+  height: 220px;
+  opacity: 1;
+}
+
+p{
+  padding-right: 2rem;
+}
+
+.headline{
+  padding-left: 12px;
+}
+.headline::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 4px; /* thickness of the bar */
+  background-color: #FFD700; /* yellow */
+  border-radius: 2px; /* optional, for slightly rounded edges */
+}
+
+/* From Uiverse.io by Praashoo7 */ 
+.spotifyContainer {
+  background-color: rgb(55, 53, 53);
+  padding: 1em;
+  padding-bottom: 1.1em;
+  border-radius: 15px;
+  margin: 1em;
+  /* border: 2px solid rgb(28, 26, 26); */
+}
+
+.loader {
+  display: flex;
+  flex-direction: row;
+  height: 4em;
+  padding-left: 1em;
+  padding-right: 1em;
+  transform: rotate(180deg);
+  justify-content: right;
+  border-radius: 10px;
+  transition: .4s ease-in-out;
+}
+
+.loader:hover {
+  cursor: pointer;
+  background-color: rgb(43, 41, 41);
+}
+
+.currentplaying {
+  display: flex;
+  margin: 1em;
+}
+
+.spotify {
+  width: 50px;
+  height: 50px;
+  margin-right: 0.6em;
+}
+
+.heading {
+  color: #c5e5e4;
+  font-size: 1.1em;
+  font-weight: bold;
+  align-self: center;
+}
+
+.loading {
+  display: flex;
+  margin-top: 1em;
+  margin-left: 0.3em;
+}
+
+.load {
+  width: 2px;
+  height: 33px;
+  background-color: limegreen;
+  animation: 1s move6 infinite;
+  border-radius: 5px;
+  margin: 0.1em;
+}
+
+.load:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.load:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.load:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+.play {
+  position: relative;
+  left: 0.35em;
+  height: 1.6em;
+  width: 1.6em;
+  clip-path: polygon(50% 50%, 100% 50%, 75% 6.6%);
+  background-color: rgb(255, 255, 255);
+  transform: rotate(-90deg);
+  align-self: center;
+  margin-top: 0.7em;
+  justify-self: center;
+}
+
+.albumcover {
+  position: relative;
+  margin-right: 1em;
+  height: 40px;
+  width: 40px;
+  background-color: rgb(164, 149, 149);
+  align-self: center;
+  border-radius: 5px;
+}
+
+.song {
+  position: relative;
+  transform: rotate(180deg);
+  margin-right: 1em;
+  color: rgb(239, 244, 244);
+  align-self: center;
+}
+
+.artist {
+  font-size: 0.6em;
+}
+
+@keyframes move6 {
+  0% {
+    height: 0.2em;
+  }
+
+  25% {
+    height: 0.7em;
+  }
+
+  50% {
+    height: 1.5em;
+  }
+
+  100% {
+    height: 0.2em;
+  }
+}

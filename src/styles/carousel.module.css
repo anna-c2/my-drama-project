@@ -1,0 +1,57 @@
+.carousel {
+    position: relative;
+    padding: 1rem;
+    
+}
+
+.cardsWrapper {
+    width: 100%;
+    max-width: 72rem;
+    margin: 0 auto;
+}
+
+.cardsTrack {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: nowrap;
+}
+
+.cardSlot {
+    flex: 0 0 auto;
+    /* fixed width, no shrink/grow */
+    transition: transform 0.3s;
+}
+
+.cardSlot:hover {
+    transform: scale(1.05);
+    z-index: 10;
+}
+
+.arrowBtn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    font-size: 2.5rem;
+    cursor: pointer;
+    padding: 10px 15px;
+    border-radius: 50%;
+    z-index: 10;
+    transition: background 0.2s ease;
+  }
+  
+  .arrowBtn:hover {
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 10;
+  }
+  
+  .leftArrow {
+    left: 10px;
+  }
+  
+  .rightArrow {
+    right: 10px;
+  }
+  

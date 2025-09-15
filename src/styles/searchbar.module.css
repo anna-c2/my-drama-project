@@ -1,0 +1,54 @@
+/* From Uiverse.io by alexruix */
+.group {
+    display: flex;
+    line-height: 28px;
+    align-items: center;
+    position: relative;
+    max-width: 50vw;
+    
+}
+
+.input {
+    width: 100%;
+    height: 40px;
+    line-height: 28px;
+    padding: 0 1rem;
+    padding-left: 3rem;
+    border: 1px solid #919198;
+    border-radius: 5px;
+    outline: none;
+    background-color: #1e1e1e;
+    color: rgb(217, 217, 217);
+    transition: .3s ease;
+    font-size: 18px;
+}
+
+.input::placeholder {
+    color: #9e9ea7;
+}
+
+/* .input:focus,
+input:hover {
+    outline: none;
+    border-color: rgba(234, 76, 137, 0.4);
+    background-color: #fff;
+    box-shadow: 0 0 0 4px rgb(234 76 137 / 10%);
+} */
+
+.icon {
+    position: absolute;
+    left: 1rem;
+    fill: #9e9ea7;
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+input[type="search"]::-webkit-search-cancel-button {
+    -webkit-appearance: none; /* remove browser default */
+    height: 18px;
+    width: 18px;
+    background: url('/x.png') no-repeat center center;
+    background-size: 16px 16px;
+    cursor: pointer;
+  }
+  

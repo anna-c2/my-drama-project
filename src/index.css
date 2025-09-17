@@ -2,13 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
+body {
     overflow: hidden;
     overflow-y: scroll;
     color: rgb(181, 187, 187);
     font-family: "DM Sans", sans-serif;
 }
-h1, h2 {
+
+h1,
+h2 {
     position: relative;
     margin: 0;
     /* left: 4rem; */
@@ -21,6 +23,65 @@ h1, h2 {
     font-size: 25px;
 }
 
-/* .container{
-    height: 100rem;
-} */
+.header {
+    padding: 30px 0px 20px 4rem;
+}
+.title{
+    width: fit-content;
+    
+}
+.title h1 {
+    overflow: hidden;
+    /* Ensures the content is not revealed until the animation */
+    border-right: .15em solid rgb(0, 242, 255);
+    /* The typwriter cursor */
+    white-space: nowrap;
+    /* Keeps the content on a single line */
+    margin: 0 auto;
+    /* Gives that scrolling effect as the typing happens */
+    /* letter-spacing: .15em; */
+    /* Adjust as needed */
+    animation:
+        typing 3.5s steps(40, end),
+        blink-caret .75s step-end infinite;
+}
+
+@keyframes typing {
+    from {
+        width: 0
+    }
+
+    to {
+        width: 100%
+    }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+
+    from,
+    to {
+        border-color: transparent
+    }
+
+    50% {
+        border-color: rgb(116, 181, 147);
+    }
+}
+
+.blurb{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding-top: 30px;
+}
+span{
+    color: rgb(116, 181, 147);
+}
+.blurb p{
+    color: #c5e5e4;
+    width: 50rem;
+}

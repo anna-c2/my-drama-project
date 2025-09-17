@@ -34,12 +34,14 @@
   height: fit-content;
   position: relative;
   padding: 3rem;
-  /* width: 100vw; */
+  display: flex;
+  justify-content: space-around;
 }
 
 .history{
   width: 50vw;
   line-height: 1.7;
+  height: 50rem;
 }
 
 .time{
@@ -96,7 +98,7 @@ strong{
   cursor: pointer;
   overflow: hidden;
   transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-  margin: 30px 0;
+  margin: 15px 0px 25px 0px;
 }
 
 .animatedButton svg {
@@ -190,9 +192,11 @@ p{
 .spotifyContainer {
   background-color: rgb(55, 53, 53);
   padding: 1em;
-  padding-bottom: 1.1em;
+  padding-bottom: 1.5em;
   border-radius: 15px;
   margin: 1em;
+  width: fit-content;
+  height: fit-content;
   /* border: 2px solid rgb(28, 26, 26); */
 }
 

@@ -26,50 +26,48 @@ h2 {
 .header {
     padding: 30px 0px 20px 4rem;
 }
-.title{
+
+.title {
     width: fit-content;
-    
+
 }
-.title h1 {
-    overflow: hidden;
-    /* Ensures the content is not revealed until the animation */
-    border-right: .15em solid rgb(0, 242, 255);
-    /* The typwriter cursor */
+
+.typing {
+    font-family: "Courier New";
+    font-size: 28px;
+    position: absolute;
+    left: 32.5rem;
+    display: inline-block;
     white-space: nowrap;
-    /* Keeps the content on a single line */
+    border-right: .15em solid rgb(0, 242, 255);
     margin: 0 auto;
-    /* Gives that scrolling effect as the typing happens */
-    /* letter-spacing: .15em; */
-    /* Adjust as needed */
-    animation:
-        typing 3.5s steps(40, end),
-        blink-caret .75s step-end infinite;
+    overflow: hidden;
+    animation: blink-caret .75s step-end infinite;
 }
 
 @keyframes typing {
     from {
-        width: 0
+        width: 0ch;
     }
 
     to {
-        width: 100%
+        width: var(--chars);
     }
 }
 
-/* The typewriter cursor effect */
 @keyframes blink-caret {
 
     from,
     to {
-        border-color: transparent
+        border-color: transparent;
     }
 
     50% {
-        border-color: rgb(116, 181, 147);
+        border-color: rgb(0, 242, 255);
     }
 }
 
-.blurb{
+.blurb {
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -78,10 +76,14 @@ h2 {
     width: 100%;
     padding-top: 30px;
 }
-span{
-    color: rgb(116, 181, 147);
-}
-.blurb p{
+
+.blurb p {
     color: #c5e5e4;
     width: 50rem;
+    margin-top: 3rem;
 }
+
+.bold {
+    font-weight: 800;
+}
+

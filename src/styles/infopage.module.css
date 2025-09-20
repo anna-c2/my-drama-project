@@ -31,7 +31,7 @@
 .popup{
   z-index: 1;
   background: rgb(61, 61, 61);
-  height: fit-content;
+  max-height: fit-content;
   position: relative;
   padding: 3rem;
   display: flex;
@@ -41,7 +41,6 @@
 .history{
   width: 50vw;
   line-height: 1.7;
-  height: 50rem;
 }
 
 .time{

@@ -29,14 +29,20 @@ def scrape_imdb_chinese_dramas():
         year_tag = item.find("span", class_="sc-15ac7568-7 cCsint dli-title-metadata-item")
 
         title = None
+        rank = None
         if title_tag:
-            title = re.sub(r"^\d+\.\s*", "", title_tag.get_text(strip=True))
+            raw_text = title_tag.get_text(strip=True)  # "12. The Untamed"
+            parts = raw_text.split(". ", 1)  # ["12", "The Untamed"]
+            if len(parts) == 2:
+                rank, title = int(parts[0]), parts[1]
 
         drama = {
             "title": title,
-            "year": year_tag.get_text(strip=True) if year_tag else None,
-            "image": img_tag["src"] if img_tag else None,
-            "rating": rating_tag.get_text(strip=True) if rating_tag else None
+            "year": year_tag.get_text(strip=True),
+            "image": img_tag["src"],
+            "rating": rating_tag.get_text(strip=True),
+            "rank": rank,
+            "genres": ["placeholder", "placeholder", "placeholder"]
         }
         dramas.append(drama)
 

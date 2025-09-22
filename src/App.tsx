@@ -6,6 +6,13 @@ import './index.css';
 import Carousel from '/Users/anna/my-drama-project/src/components/Carousel.tsx'
 import {useEffect, useRef} from "react";
 
+type Drama = {
+  title: string,
+  year: string,
+  image: string,
+  rating: string
+};
+
 function App() {
   const typingRef = useRef<HTMLHeadingElement>(null);
 
@@ -43,12 +50,7 @@ function App() {
       <div className="trendingUS">
         <Carousel />
       </div>
-      <div className="header">
-        <h1>Trending Dramas in the United States</h1>
-      </div>
-      <div className="trendingUS">
-        <Carousel />
-      </div>
+    
     </div>
   )
 }

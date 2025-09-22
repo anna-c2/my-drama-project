@@ -3,72 +3,144 @@
     "title": "The Journey of Legend",
     "year": "2025–",
     "image": "https://m.media-amazon.com/images/M/MV5BNDBhMDc5NDAtNWVlMS00MWRkLWFkZGEtZDM1YzMxOWZkMTk3XkEyXkFqcGc@._V1_QL75_UX90_CR0,13,90,133_.jpg",
-    "rating": "5.1"
+    "rating": "5.2",
+    "rank": 1,
+    "genres": [
+      "placeholder",
+      "placeholder",
+      "placeholder"
+    ]
   },
   {
     "title": "Hidden Love",
     "year": "2023",
     "image": "https://m.media-amazon.com/images/M/MV5BZTc3MmQ1YjctYWM4YS00YzFmLTg2YjQtNjEzODQ5ZWVjZjVmXkEyXkFqcGc@._V1_QL75_UY133_CR5,0,90,133_.jpg",
-    "rating": "8.6"
+    "rating": "8.6",
+    "rank": 2,
+    "genres": [
+      "placeholder",
+      "placeholder",
+      "placeholder"
+    ]
   },
   {
     "title": "Legend of the Female General",
     "year": "2025",
     "image": "https://m.media-amazon.com/images/M/MV5BMWNiNWQ5YTUtOTAyZS00NDUzLWI5MjctZWE2MzNhZGJhNDE0XkEyXkFqcGc@._V1_QL75_UY133_CR3,0,90,133_.jpg",
-    "rating": "8.0"
+    "rating": "8.0",
+    "rank": 3,
+    "genres": [
+      "placeholder",
+      "placeholder",
+      "placeholder"
+    ]
   },
   {
     "title": "The Wandering Earth",
     "year": "2019",
     "image": "https://m.media-amazon.com/images/M/MV5BM2RkYTg4YWQtNmE3Ny00MmE3LWJkNzQtZTFhNWNjOGM3OTZlXkEyXkFqcGc@._V1_QL75_UY133_CR3,0,90,133_.jpg",
-    "rating": "5.9"
+    "rating": "5.9",
+    "rank": 4,
+    "genres": [
+      "placeholder",
+      "placeholder",
+      "placeholder"
+    ]
   },
   {
     "title": "The First Frost",
     "year": "2025–",
     "image": "https://m.media-amazon.com/images/M/MV5BNGRhZjkxNmMtMGI0Ny00N2M1LTkzM2ItNzg2YWIwYjcwNzE0XkEyXkFqcGc@._V1_QL75_UX90_CR0,13,90,133_.jpg",
-    "rating": "8.4"
+    "rating": "8.4",
+    "rank": 5,
+    "genres": [
+      "placeholder",
+      "placeholder",
+      "placeholder"
+    ]
   },
   {
     "title": "Three-Body",
     "year": "2023–",
     "image": "https://m.media-amazon.com/images/M/MV5BNTgxMDg2OTYtMjdhNi00NTAyLThlZWItOGYyNDViNWU5NTk2XkEyXkFqcGc@._V1_QL75_UX90_CR0,10,90,133_.jpg",
-    "rating": "7.6"
+    "rating": "7.6",
+    "rank": 6,
+    "genres": [
+      "placeholder",
+      "placeholder",
+      "placeholder"
+    ]
   },
   {
     "title": "Legend of Zang Hai",
     "year": "2025",
     "image": "https://m.media-amazon.com/images/M/MV5BMWVlODM4YmYtMThjZC00YjkxLThjZjYtOTYxNzgzM2YwNGM3XkEyXkFqcGc@._V1_QL75_UY133_CR5,0,90,133_.jpg",
-    "rating": "8.5"
+    "rating": "8.5",
+    "rank": 7,
+    "genres": [
+      "placeholder",
+      "placeholder",
+      "placeholder"
+    ]
   },
   {
     "title": "The Best Thing",
     "year": "2025",
     "image": "https://m.media-amazon.com/images/M/MV5BZWE5NGJjMmMtOTI5Ni00NWYzLWI4NTUtYmMyM2QwNzNmMDYwXkEyXkFqcGc@._V1_QL75_UY133_CR0,0,90,133_.jpg",
-    "rating": "8.2"
+    "rating": "8.2",
+    "rank": 8,
+    "genres": [
+      "placeholder",
+      "placeholder",
+      "placeholder"
+    ]
   },
   {
     "title": "Creation of the Gods II: Demon Force",
     "year": "2025",
     "image": "https://m.media-amazon.com/images/M/MV5BM2I1MjFlZjktYjBkMy00MmE4LTljZDItNzA0MDY1OGRjYWQwXkEyXkFqcGc@._V1_QL75_UX90_CR0,0,90,133_.jpg",
-    "rating": "6.2"
+    "rating": "6.2",
+    "rank": 9,
+    "genres": [
+      "placeholder",
+      "placeholder",
+      "placeholder"
+    ]
   },
   {
     "title": "Legend of Fei",
     "year": "2020–2021",
     "image": "https://m.media-amazon.com/images/M/MV5BMWQ5OGYwN2YtNDY5Ny00YTMxLWE1ZTYtMTQyZDMxNTA5ZDQ0XkEyXkFqcGc@._V1_QL75_UY133_CR3,0,90,133_.jpg",
-    "rating": "7.2"
+    "rating": "7.2",
+    "rank": 10,
+    "genres": [
+      "placeholder",
+      "placeholder",
+      "placeholder"
+    ]
   },
   {
     "title": "Professional Single",
     "year": "2020",
     "image": "https://m.media-amazon.com/images/M/MV5BMzlmYjY1MzktY2EwYy00OTk4LTlhNzEtZDBkOTZjNjNjYjM2XkEyXkFqcGc@._V1_QL75_UY133_CR5,0,90,133_.jpg",
-    "rating": "7.2"
+    "rating": "7.2",
+    "rank": 11,
+    "genres": [
+      "placeholder",
+      "placeholder",
+      "placeholder"
+    ]
   },
   {
     "title": "Till the End of the Moon",
     "year": "2023",
     "image": "https://m.media-amazon.com/images/M/MV5BOWJhNzlmOTktNzRjMS00NGM0LWIyY2YtNTU1MzQ5YzViY2FmXkEyXkFqcGc@._V1_QL75_UX90_CR0,1,90,133_.jpg",
-    "rating": "8.1"
+    "rating": "8.1",
+    "rank": 12,
+    "genres": [
+      "placeholder",
+      "placeholder",
+      "placeholder"
+    ]
   }
 ]

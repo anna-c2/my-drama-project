@@ -74,8 +74,6 @@
     padding: 3px;
     width: 70px;
     font-family: "Arial", sans-serif;
-    color: rgb(41, 87, 41);
-    background: rgb(102, 194, 99);
     text-align: center;
     position: absolute;
     right: 0.5rem;
@@ -83,6 +81,15 @@
     z-index: 3;
     border-radius: 25px;
     font-size: 14px;
+}
+
+.complete{
+    color: rgb(41, 87, 41);
+    background: rgb(102, 194, 99);
+}
+.ongoing{
+    color: rgb(41, 58, 87);
+    background: rgb(204, 163, 234);
 }
 
 .nav {

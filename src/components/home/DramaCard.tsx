@@ -1,48 +1,47 @@
 
 import styles from '/Users/anna/my-drama-project/src/styles/dramacard.module.css'
 
-type DramaCardProps = {
-    title: string
-    poster: string
-    year: number
-    episodes: number
-    status: string
-    genres: string[]
-    rank: number
+interface Drama {
+    title: string;
+    year: string;
+    image: string;
+    rating: string;
+    rank: number;
+    genres: string[];
+  }
+
+interface DramaCardProps{
+    drama: Drama;
 }
+
 // props: movie name, year, number of episodes, completed/ongoing, rating, theme words(3), leads, rank
-export default function DramaCard({
-    title,
-    poster,
-    year,
-    episodes,
-    status,
-    genres= [],
-    rank
-} : DramaCardProps){
+export default function DramaCard({drama}: DramaCardProps){
+    // const isOngoing = drama.year?.includes("–");
     return(
         <div>
            
             <div className={styles.card}>
-                {rank < 4 ? (
+                {drama.rank < 4 ? (
                     <div>
                         <img className={styles.star} src="star.png"/>
-                        <div className={styles.rank}>{rank}</div>
+                        <div className={styles.rank}>{drama.rank}</div>
                     </div>
                 ) : (
-                    <div className={styles.rank2}>{rank}</div>
+                    <div className={styles.rank2}>{drama.rank}</div>
                 )}
                 <img className={styles.heart} src="heart.png"/>
-                <div className={styles.rating}> 9.8</div>
-                <img className={styles.poster} src={poster}/>
-                <p className={styles.title}>{title}</p>
+                <div className={styles.rating}>{drama.rating}</div>
+                <img className={styles.poster} src={drama.image}/>
+                <p className={styles.title}>{drama.title}</p>
                 <div className={styles.nav}>
-                    <span>{episodes} Episodes</span>
-                    <span>{year}</span>
+                    <span>30 Episodes</span>
+                    <span>{drama.year}</span>
                 </div>
-                <div className={styles.status}>{status}</div>
+                {/* {isOngoing ? (<div className={styles.ongoing + " " + styles.status}>Ongoing</div>):
+                (<div className={styles.complete + " " + styles.status}>Complete</div>)} */}
+                
                 <div className={styles.genreContainer}>
-                    {genres.map((genre, id) => (
+                    {drama.genres.map((genre, id) => (
                         <div key={id} className={styles.genre}> {genre} </div>
                     ))}
                 </div>

@@ -1,6 +1,6 @@
 'use client'
 import styles from '/Users/anna/my-drama-project/src/styles/infopage.module.css';
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 async function bookmarkDrama(drama: {
     title: string;
@@ -50,6 +50,7 @@ export default function InfoPage({ drama }: {
 }) {
     const imageUrl = "https://pub-affc0001b76247f59177d2bd8ccdc395.r2.dev/the-prisoner-of-beauty.jpeg";
     const [bookmarked, setBookmarked] = useState(false);
+    const [bookmarkedDramas, setBookmarkedDramas] = useState<typeof drama[]>([]);
 
     const handleBookmark = async () => {
         try {
@@ -68,6 +69,22 @@ export default function InfoPage({ drama }: {
             console.error(err);
         }
     }
+    useEffect(() => {
+        const fetchBookmarks = async () => {
+            try{
+                const res = await fetch("http://127.0.0.1:8000/getDramas")
+                if(!res.ok) throw new Error("Failed to fetch bookmarks");
+                const data = await res.json();
+                setBookmarkedDramas(data);
+
+                const isBookmarked = data.some((d: typeof drama) => d.title === drama.title);
+                setBookmarked(isBookmarked);
+            } catch (err) {
+                console.error(err);
+            }
+        };
+        fetchBookmarks();
+    }, [drama.title])
     return (
         <div className={styles.main}>
             <div className={styles.intro}>
@@ -103,7 +120,7 @@ export default function InfoPage({ drama }: {
                             ></path>
                         </svg>
                         <img className={bookmarked ? styles.checkmark : styles.hide} src="checkmark.svg"/>
-                        <span className={styles.text}>{bookmarked ? "BOOKMARKED DRAMA" : "BOOKMARK DRAMA"}</span>
+                        <span className={styles.text}>{bookmarked ? "REMOVE BOOKMARK" : "ADD BOOKMARK"}</span>
                         <span className={styles.circle}></span>
                         <svg xmlns="http://www.w3.org/2000/svg" className={bookmarked ? styles.hide : styles.arr1} viewBox="0 0 24 24">
                             <path

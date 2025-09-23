@@ -64,3 +64,8 @@ async def delete_drama(drama_title: str):
     result = dramas_collection.delete_one({"title": drama_title})
     if result.deleted_count == 0:
         raise HTTPException(status_code=404, detail="Drama not found.")
+
+@app.get("/getDramas")
+async def get_dramas():
+    dramas = list(dramas_collection.find({}, {"_id": 0}))
+    return dramas

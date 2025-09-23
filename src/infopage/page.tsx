@@ -1,7 +1,73 @@
 'use client'
 import styles from '/Users/anna/my-drama-project/src/styles/infopage.module.css';
-export default function InfoPage() {
+import { useState } from "react";
+
+async function bookmarkDrama(drama: {
+    title: string;
+    year: string;
+    image: string;
+    rating: string;
+    rank: number;
+    genres: string[];
+}) {
+    const resp = await fetch("http://127.0.0.1:8000/bookmark", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(drama),
+    });
+    if (!resp.ok) {
+        throw new Error("Error bookmarking drama");
+    }
+    return await resp.json();
+}
+
+async function unbookmarkDrama(drama: {
+    title: string;
+    year: string;
+    image: string;
+    rating: string;
+    rank: number;
+    genres: string[];
+}){
+    const resp = await fetch(`http://127.0.0.1:8000/drama/${encodeURIComponent(drama.title)}`, {
+        method: "DELETE"
+    });
+    if(!resp.ok){
+        throw new Error("Error removing drama from bookmarks.")
+    }
+    return await resp.json();
+}
+
+export default function InfoPage({ drama }: {
+    drama: {
+        title: string;
+        year: string;
+        image: string;
+        rating: string;
+        rank: number;
+        genres: string[];
+    }
+}) {
     const imageUrl = "https://pub-affc0001b76247f59177d2bd8ccdc395.r2.dev/the-prisoner-of-beauty.jpeg";
+    const [bookmarked, setBookmarked] = useState(false);
+
+    const handleBookmark = async () => {
+        try {
+            if (!bookmarked) {
+                const result = await bookmarkDrama(drama);
+                console.log("Bookmarked:", result);
+                setBookmarked(true);
+            }
+            else{
+                const result = await unbookmarkDrama(drama);
+                console.log("Unbookmarked:", result);
+                setBookmarked(false);
+            }
+
+        } catch (err) {
+            console.error(err);
+        }
+    }
     return (
         <div className={styles.main}>
             <div className={styles.intro}>
@@ -30,15 +96,16 @@ export default function InfoPage() {
                         </div>
                     </section>
 
-                    <button className={styles.animatedButton}>
-                        <svg xmlns="http://www.w3.org/2000/svg" className={styles.arr2} viewBox="0 0 24 24">
+                    <button className={`${styles.animatedButton} ${bookmarked ? styles.bookmarked : styles.default}`} onClick={handleBookmark}>
+                        <svg xmlns="http://www.w3.org/2000/svg" className={bookmarked ? styles.hide : styles.arr2} viewBox="0 0 24 24">
                             <path
                                 d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
                             ></path>
                         </svg>
-                        <span className={styles.text}>BOOKMARK DRAMA</span>
+                        <img className={bookmarked ? styles.checkmark : styles.hide} src="checkmark.svg"/>
+                        <span className={styles.text}>{bookmarked ? "BOOKMARKED DRAMA" : "BOOKMARK DRAMA"}</span>
                         <span className={styles.circle}></span>
-                        <svg xmlns="http://www.w3.org/2000/svg" className={styles.arr1} viewBox="0 0 24 24">
+                        <svg xmlns="http://www.w3.org/2000/svg" className={bookmarked ? styles.hide : styles.arr1} viewBox="0 0 24 24">
                             <path
                                 d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
                             ></path>
@@ -53,8 +120,8 @@ export default function InfoPage() {
             </div>
             <div className={styles.popup}>
                 <div className={styles.history}>
-                        <h1 className={styles.headline}>Through the Lens of History</h1>
-                        <p className={styles.historyText}>The Prisoner of Beauty (《折腰》) takes place in a fictional dynasty, but its world is modeled on the Han dynasty, giving the story cultural depth and authenticity. The Han era (206 BCE–220 CE) was defined by imperial power, frontier threats from the Xiongnu, and the influence of powerful clans during times of weakened central authority. The series mirrors this context through the Wei family’s battles with the Xiongnu and its blood feud with the Qiao family, reflecting how political instability and family rivalries shaped the era. Marriage as a political tool was common in Han society, and Xiao Qiao’s forced union with Wei Shao echoes these practices, turning her personal fate into a strategic alliance. While Han women were expected to be obedient under Confucian ideals, history records cases of women wielding influence behind the scenes. Xiao Qiao embodies this tension, stepping into roles of strategist, defender, and leader, a blend of historical plausibility and modern storytelling that emphasizes female agency. Wei Shao’s character arc also draws on Han values: Confucian teachings demanded that rulers prioritize the people’s welfare over revenge, and his shift from vengeance to benevolence fulfills that expectation. Visually, the series borrows from Han aesthetics, from flowing robes and embroidered motifs to hair ornaments and frontier armor, anchoring the fictional world in recognizable material culture. Though the dynasty itself is imagined, its Han-inspired setting shapes the themes of power, duty, love, and transformation, making the story resonate with both historical richness and contemporary appeal.</p>
+                    <h1 className={styles.headline}>Through the Lens of History</h1>
+                    <p className={styles.historyText}>The Prisoner of Beauty (《折腰》) takes place in a fictional dynasty, but its world is modeled on the Han dynasty, giving the story cultural depth and authenticity. The Han era (206 BCE–220 CE) was defined by imperial power, frontier threats from the Xiongnu, and the influence of powerful clans during times of weakened central authority. The series mirrors this context through the Wei family’s battles with the Xiongnu and its blood feud with the Qiao family, reflecting how political instability and family rivalries shaped the era. Marriage as a political tool was common in Han society, and Xiao Qiao’s forced union with Wei Shao echoes these practices, turning her personal fate into a strategic alliance. While Han women were expected to be obedient under Confucian ideals, history records cases of women wielding influence behind the scenes. Xiao Qiao embodies this tension, stepping into roles of strategist, defender, and leader, a blend of historical plausibility and modern storytelling that emphasizes female agency. Wei Shao’s character arc also draws on Han values: Confucian teachings demanded that rulers prioritize the people’s welfare over revenge, and his shift from vengeance to benevolence fulfills that expectation. Visually, the series borrows from Han aesthetics, from flowing robes and embroidered motifs to hair ornaments and frontier armor, anchoring the fictional world in recognizable material culture. Though the dynasty itself is imagined, its Han-inspired setting shapes the themes of power, duty, love, and transformation, making the story resonate with both historical richness and contemporary appeal.</p>
                 </div>
                 <div className={styles.spotifyContainer}>
                     <div className={styles.currentplaying}>

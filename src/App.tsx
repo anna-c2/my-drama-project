@@ -4,20 +4,29 @@ import Header from '/Users/anna/my-drama-project/src/components/Header.tsx';
 import InfoPage from '/Users/anna/my-drama-project/src/infopage/page.tsx';
 import './index.css';
 import Carousel from '/Users/anna/my-drama-project/src/components/Carousel.tsx'
-import {useEffect, useRef} from "react";
+import { useEffect, useRef } from "react";
 
-type Drama = {
-  title: string,
-  year: string,
-  image: string,
-  rating: string
+interface Drama {
+  title: string;
+  year: string;
+  image: string;
+  rating: string;
+  rank: number;
+  genres: string[];
 };
-
+const testDrama: Drama = {
+  title: "The Prisoner of Beauty",
+  year: "2025",
+  image: "https://pub-affc0001b76247f59177d2bd8ccdc395.r2.dev/the-prisoner-of-beauty.jpeg",
+  rating: "10",
+  rank: 1,
+  genres: ["Romance", "War", "Political Marriage"]
+}
 function App() {
   const typingRef = useRef<HTMLHeadingElement>(null);
 
   useEffect(() => {
-    if (typingRef.current){
+    if (typingRef.current) {
       const el = typingRef.current;
       const chars = el.textContent?.length ?? 0;
 
@@ -25,7 +34,7 @@ function App() {
       el.style.animation = "none";
       void el.offsetWidth;
       el.style.animation = `
-        typing ${chars*0.1}s steps(${chars}, end),
+        typing ${chars * 0.1}s steps(${chars}, end),
         blink-caret .75s step-end infinite`;
     }
   }, []);
@@ -33,7 +42,7 @@ function App() {
   return (
     <div className="bg-[#2d2d30] relative">
       {/* <Header></Header> */}
-      <InfoPage/>
+      <InfoPage drama={testDrama}/>
       {/* <div className="container">
         hello
       </div> */}
@@ -50,7 +59,7 @@ function App() {
       <div className="trendingUS">
         <Carousel />
       </div>
-    
+
     </div>
   )
 }

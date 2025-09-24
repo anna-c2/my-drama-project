@@ -1,146 +1,158 @@
 [
   {
-    "title": "The Journey of Legend",
-    "year": "2025–",
-    "image": "https://m.media-amazon.com/images/M/MV5BNDBhMDc5NDAtNWVlMS00MWRkLWFkZGEtZDM1YzMxOWZkMTk3XkEyXkFqcGc@._V1_QL75_UX90_CR0,13,90,133_.jpg",
-    "rating": "5.2",
+    "title": "The Untamed Special Edition",
+    "year": "2019",
+    "image": "https://i.mydramalist.com/wlo1ks.jpg?v=1",
+    "rating": "9.1",
     "rank": 1,
     "genres": [
-      "placeholder",
-      "placeholder",
-      "placeholder"
-    ]
+      "genre1",
+      "genre2",
+      "genre3"
+    ],
+    "episodes": "20"
+  },
+  {
+    "title": "Nirvana in Fire",
+    "year": "2015",
+    "image": "https://i.mydramalist.com/kV54ds.jpg?v=1",
+    "rating": "9.1",
+    "rank": 2,
+    "genres": [
+      "genre1",
+      "genre2",
+      "genre3"
+    ],
+    "episodes": "54"
+  },
+  {
+    "title": "When I Fly Towards You",
+    "year": "2023",
+    "image": "https://i.mydramalist.com/1wOO83_4s.jpg?v=1",
+    "rating": "9.0",
+    "rank": 3,
+    "genres": [
+      "genre1",
+      "genre2",
+      "genre3"
+    ],
+    "episodes": "24"
+  },
+  {
+    "title": "Reset",
+    "year": "2022",
+    "image": "https://i.mydramalist.com/qZyPz_4s.jpg?v=1",
+    "rating": "9.0",
+    "rank": 4,
+    "genres": [
+      "genre1",
+      "genre2",
+      "genre3"
+    ],
+    "episodes": "15"
+  },
+  {
+    "title": "Joy of Life",
+    "year": "2019",
+    "image": "https://i.mydramalist.com/qwkz8s.jpg?v=1",
+    "rating": "9.0",
+    "rank": 5,
+    "genres": [
+      "genre1",
+      "genre2",
+      "genre3"
+    ],
+    "episodes": "46"
+  },
+  {
+    "title": "Mysterious Lotus Casebook",
+    "year": "2023",
+    "image": "https://i.mydramalist.com/kAozjj_4s.jpg?v=1",
+    "rating": "9.0",
+    "rank": 6,
+    "genres": [
+      "genre1",
+      "genre2",
+      "genre3"
+    ],
+    "episodes": "40"
   },
   {
     "title": "Hidden Love",
     "year": "2023",
-    "image": "https://m.media-amazon.com/images/M/MV5BZTc3MmQ1YjctYWM4YS00YzFmLTg2YjQtNjEzODQ5ZWVjZjVmXkEyXkFqcGc@._V1_QL75_UY133_CR5,0,90,133_.jpg",
-    "rating": "8.6",
-    "rank": 2,
-    "genres": [
-      "placeholder",
-      "placeholder",
-      "placeholder"
-    ]
-  },
-  {
-    "title": "Legend of the Female General",
-    "year": "2025",
-    "image": "https://m.media-amazon.com/images/M/MV5BMWNiNWQ5YTUtOTAyZS00NDUzLWI5MjctZWE2MzNhZGJhNDE0XkEyXkFqcGc@._V1_QL75_UY133_CR3,0,90,133_.jpg",
-    "rating": "8.0",
-    "rank": 3,
-    "genres": [
-      "placeholder",
-      "placeholder",
-      "placeholder"
-    ]
-  },
-  {
-    "title": "The Wandering Earth",
-    "year": "2019",
-    "image": "https://m.media-amazon.com/images/M/MV5BM2RkYTg4YWQtNmE3Ny00MmE3LWJkNzQtZTFhNWNjOGM3OTZlXkEyXkFqcGc@._V1_QL75_UY133_CR3,0,90,133_.jpg",
-    "rating": "5.9",
-    "rank": 4,
-    "genres": [
-      "placeholder",
-      "placeholder",
-      "placeholder"
-    ]
-  },
-  {
-    "title": "The First Frost",
-    "year": "2025–",
-    "image": "https://m.media-amazon.com/images/M/MV5BNGRhZjkxNmMtMGI0Ny00N2M1LTkzM2ItNzg2YWIwYjcwNzE0XkEyXkFqcGc@._V1_QL75_UX90_CR0,13,90,133_.jpg",
-    "rating": "8.4",
-    "rank": 5,
-    "genres": [
-      "placeholder",
-      "placeholder",
-      "placeholder"
-    ]
-  },
-  {
-    "title": "Three-Body",
-    "year": "2023–",
-    "image": "https://m.media-amazon.com/images/M/MV5BNTgxMDg2OTYtMjdhNi00NTAyLThlZWItOGYyNDViNWU5NTk2XkEyXkFqcGc@._V1_QL75_UX90_CR0,10,90,133_.jpg",
-    "rating": "7.6",
-    "rank": 6,
-    "genres": [
-      "placeholder",
-      "placeholder",
-      "placeholder"
-    ]
-  },
-  {
-    "title": "Legend of Zang Hai",
-    "year": "2025",
-    "image": "https://m.media-amazon.com/images/M/MV5BMWVlODM4YmYtMThjZC00YjkxLThjZjYtOTYxNzgzM2YwNGM3XkEyXkFqcGc@._V1_QL75_UY133_CR5,0,90,133_.jpg",
-    "rating": "8.5",
+    "image": "https://i.mydramalist.com/x4vJO3_4s.jpg?v=1",
+    "rating": "9.0",
     "rank": 7,
     "genres": [
-      "placeholder",
-      "placeholder",
-      "placeholder"
-    ]
+      "genre1",
+      "genre2",
+      "genre3"
+    ],
+    "episodes": "25"
   },
   {
-    "title": "The Best Thing",
-    "year": "2025",
-    "image": "https://m.media-amazon.com/images/M/MV5BZWE5NGJjMmMtOTI5Ni00NWYzLWI4NTUtYmMyM2QwNzNmMDYwXkEyXkFqcGc@._V1_QL75_UY133_CR0,0,90,133_.jpg",
-    "rating": "8.2",
+    "title": "The Untamed",
+    "year": "2019",
+    "image": "https://i.mydramalist.com/qOrz5s.jpg?v=1",
+    "rating": "9.0",
     "rank": 8,
     "genres": [
-      "placeholder",
-      "placeholder",
-      "placeholder"
-    ]
+      "genre1",
+      "genre2",
+      "genre3"
+    ],
+    "episodes": "50"
   },
   {
-    "title": "Creation of the Gods II: Demon Force",
-    "year": "2025",
-    "image": "https://m.media-amazon.com/images/M/MV5BM2I1MjFlZjktYjBkMy00MmE4LTljZDItNzA0MDY1OGRjYWQwXkEyXkFqcGc@._V1_QL75_UX90_CR0,0,90,133_.jpg",
-    "rating": "6.2",
+    "title": "Joy of Life Season 2",
+    "year": "2024",
+    "image": "https://i.mydramalist.com/60LX6d_4s.jpg?v=1",
+    "rating": "8.9",
     "rank": 9,
     "genres": [
-      "placeholder",
-      "placeholder",
-      "placeholder"
-    ]
+      "genre1",
+      "genre2",
+      "genre3"
+    ],
+    "episodes": "36"
   },
   {
-    "title": "Legend of Fei",
-    "year": "2020–2021",
-    "image": "https://m.media-amazon.com/images/M/MV5BMWQ5OGYwN2YtNDY5Ny00YTMxLWE1ZTYtMTQyZDMxNTA5ZDQ0XkEyXkFqcGc@._V1_QL75_UY133_CR3,0,90,133_.jpg",
-    "rating": "7.2",
+    "title": "The Spirealm",
+    "year": "2024",
+    "image": "https://i.mydramalist.com/2wgBdE_4s.jpg?v=1",
+    "rating": "8.9",
     "rank": 10,
     "genres": [
-      "placeholder",
-      "placeholder",
-      "placeholder"
-    ]
+      "genre1",
+      "genre2",
+      "genre3"
+    ],
+    "episodes": "78"
   },
   {
-    "title": "Professional Single",
-    "year": "2020",
-    "image": "https://m.media-amazon.com/images/M/MV5BMzlmYjY1MzktY2EwYy00OTk4LTlhNzEtZDBkOTZjNjNjYjM2XkEyXkFqcGc@._V1_QL75_UY133_CR5,0,90,133_.jpg",
-    "rating": "7.2",
+    "title": "Love Like the Galaxy: Part 2",
+    "year": "2022",
+    "image": "https://i.mydramalist.com/XYxmO_4s.jpg?v=1",
+    "rating": "8.9",
     "rank": 11,
     "genres": [
-      "placeholder",
-      "placeholder",
-      "placeholder"
-    ]
+      "genre1",
+      "genre2",
+      "genre3"
+    ],
+    "episodes": "29"
   },
   {
-    "title": "Till the End of the Moon",
-    "year": "2023",
-    "image": "https://m.media-amazon.com/images/M/MV5BOWJhNzlmOTktNzRjMS00NGM0LWIyY2YtNTU1MzQ5YzViY2FmXkEyXkFqcGc@._V1_QL75_UX90_CR0,1,90,133_.jpg",
-    "rating": "8.1",
+    "title": "The Prisoner of Beauty",
+    "year": "2025",
+    "image": "https://i.mydramalist.com/73x5gD_4s.jpg?v=1",
+    "rating": "8.9",
     "rank": 12,
     "genres": [
-      "placeholder",
-      "placeholder",
-      "placeholder"
-    ]
+      "genre1",
+      "genre2",
+      "genre3"
+    ],
+    "episodes": "36"
   }
 ]

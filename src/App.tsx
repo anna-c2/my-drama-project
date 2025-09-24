@@ -4,7 +4,7 @@ import Header from '/Users/anna/my-drama-project/src/components/Header.tsx';
 import InfoPage from '/Users/anna/my-drama-project/src/infopage/page.tsx';
 import './index.css';
 import Carousel from '/Users/anna/my-drama-project/src/components/Carousel.tsx'
-import { useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 
 interface Drama {
   title: string;
@@ -13,6 +13,7 @@ interface Drama {
   rating: string;
   rank: number;
   genres: string[];
+  episodes: string;
 };
 const testDrama: Drama = {
   title: "The Prisoner of Beauty",
@@ -20,10 +21,13 @@ const testDrama: Drama = {
   image: "https://pub-affc0001b76247f59177d2bd8ccdc395.r2.dev/the-prisoner-of-beauty.jpeg",
   rating: "10",
   rank: 1,
-  genres: ["Romance", "War", "Political Marriage"]
+  genres: ["Romance", "War", "Political Marriage"],
+  episodes: "34"
 }
+
 function App() {
   const typingRef = useRef<HTMLHeadingElement>(null);
+  const [selectDrama, setSelectDrama] = useState<Drama | null>(null);
 
   useEffect(() => {
     if (typingRef.current) {
@@ -41,25 +45,26 @@ function App() {
 
   return (
     <div className="bg-[#2d2d30] relative">
-      {/* <Header></Header> */}
-      <InfoPage drama={testDrama}/>
-      {/* <div className="container">
-        hello
-      </div> */}
-      <div className="blurb">
-        <div className="title">
-          <h1><span className="bold">⭐ Beyond the Drama ⭐</span></h1>
-          <span ref={typingRef} className="typing">Stories Within the Story</span>
+      {selectDrama ? (
+        <InfoPage drama={selectDrama} onBack={() => setSelectDrama(null)} />
+      ) : (
+        <div className="box">
+          <div className="blurb">
+            <div className="title">
+              <h1><span className="bold">⭐ Beyond the Drama ⭐</span></h1>
+              <span ref={typingRef} className="typing">Stories Within the Story</span>
+            </div>
+            <p>Step deeper into top trending dramas. Discover the history behind the setting, the novels that inspired the plot, the soundtracks that set the mood, and the cultural details that shape every scene.</p>
+          </div>
+          <div className="header">
+            <h1>Most Popular Chinese Dramas</h1>
+          </div>
+          <div className="trendingUS">
+            <Carousel setSelectDrama={setSelectDrama} />
+          </div>
         </div>
-        <p>Step deeper into top trending dramas. Discover the history behind the setting, the novels that inspired the plot, the soundtracks that set the mood, and the cultural details that shape every scene.</p>
-      </div>
-      <div className="header">
-        <h1>Trending Dramas in China</h1>
-      </div>
-      <div className="trendingUS">
-        <Carousel />
-      </div>
-
+      )
+      }
     </div>
   )
 }

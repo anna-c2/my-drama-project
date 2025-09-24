@@ -13,6 +13,7 @@ interface Drama {
     rating: string;
     rank: number;
     genres: string[];
+    episodes: string
   }
 
 // const dramas = [
@@ -30,7 +31,7 @@ interface Drama {
 //     { id: 12, title: 'Love Between Fairy and Devil', poster: 'https://pic4.iqiyipic.com/image/20250806/8a/f6/a_100609808_m_601_en_1080_608.jpg', year: 2022, episodes: 36, status: 'Completed', genres: ['Fantasy', 'Romance', 'Xianxia'], rank: 12 },
 // ]
 
-export default function Carousel() {
+export default function Carousel({ setSelectDrama }: { setSelectDrama: (selectDrama: Drama) => void }) {
     const [dramas, setDramas] = useState<Drama[]>([]);
 
     useEffect(() => {
@@ -41,8 +42,8 @@ export default function Carousel() {
 
     const [page, setPage] = useState(0)
     const itemsPerPage = 4
-    const cardWidthRem = 18 // fixed card width
-    const gapRem = 1 // gap between cards
+    const cardWidthRem = 18
+    const gapRem = 1
     const maxPage = Math.ceil(dramas.length / itemsPerPage)
 
     const paginate = (direction: number) => {
@@ -73,7 +74,7 @@ export default function Carousel() {
                 >
                     {dramas.map((drama) => (
                         <div key={drama.rank} className={styles.cardSlot} style={{ width: `${cardWidthRem}rem` }}>
-                            <DramaCard drama={drama} />
+                            <DramaCard drama={drama} setSelectDrama={setSelectDrama} />
                         </div>
                     ))}
                 </motion.div>

@@ -28,17 +28,17 @@ async function unbookmarkDrama(drama: {
     rating: string;
     rank: number;
     genres: string[];
-}){
+}) {
     const resp = await fetch(`http://127.0.0.1:8000/drama/${encodeURIComponent(drama.title)}`, {
         method: "DELETE"
     });
-    if(!resp.ok){
+    if (!resp.ok) {
         throw new Error("Error removing drama from bookmarks.")
     }
     return await resp.json();
 }
 
-export default function InfoPage({ drama }: {
+export default function InfoPage({ drama, onBack }: {
     drama: {
         title: string;
         year: string;
@@ -46,12 +46,14 @@ export default function InfoPage({ drama }: {
         rating: string;
         rank: number;
         genres: string[];
-    }
+        episodes: string;
+    };
+    onBack: () => void
 }) {
-    const imageUrl = "https://pub-affc0001b76247f59177d2bd8ccdc395.r2.dev/the-prisoner-of-beauty.jpeg";
+    // const imageUrl = "https://i.mydramalist.com/wlo1ks.jpg?v=1";
     const [bookmarked, setBookmarked] = useState(false);
     const [bookmarkedDramas, setBookmarkedDramas] = useState<typeof drama[]>([]);
-
+    console.log(drama);
     const handleBookmark = async () => {
         try {
             if (!bookmarked) {
@@ -59,7 +61,7 @@ export default function InfoPage({ drama }: {
                 console.log("Bookmarked:", result);
                 setBookmarked(true);
             }
-            else{
+            else {
                 const result = await unbookmarkDrama(drama);
                 console.log("Unbookmarked:", result);
                 setBookmarked(false);
@@ -71,9 +73,9 @@ export default function InfoPage({ drama }: {
     }
     useEffect(() => {
         const fetchBookmarks = async () => {
-            try{
+            try {
                 const res = await fetch("http://127.0.0.1:8000/getDramas")
-                if(!res.ok) throw new Error("Failed to fetch bookmarks");
+                if (!res.ok) throw new Error("Failed to fetch bookmarks");
                 const data = await res.json();
                 setBookmarkedDramas(data);
 
@@ -88,28 +90,28 @@ export default function InfoPage({ drama }: {
     return (
         <div className={styles.main}>
             <div className={styles.intro}>
-                <div className={styles.poster} style={{ "--parallax-url": `url(${imageUrl})` } as React.CSSProperties}></div>
+                <div className={styles.poster} style={{ "--parallax-url": `url(${drama.image})` } as React.CSSProperties}></div>
                 <section className={styles.description}>
                     <div className={styles.title}>
+                        <img className={styles.back} onClick={onBack} src="back.png" />
                         <div>
-                            <h1>The Prisoner of Beauty</h1>
+                            <h1>{drama.title}</h1>
                         </div>
-
                     </div>
-                    <h2>折腰</h2>
+                    <h2>中文名字</h2>
 
                     <section className={styles.infoContainer}>
                         <div className={styles.time}>
                             <img className={styles.icon} src="star_white.png"></img>
-                            <p>8.9</p>
+                            <p>{drama.rating}</p>
                         </div>
                         <div className={styles.time}>
                             <img className={styles.icon} src="calendar.png">
-                            </img><p>2025</p>
+                            </img><p>{drama.year}</p>
                         </div>
                         <div className={styles.time}>
                             <img className={styles.icon} src="film.png"></img>
-                            <p>35 Episodes</p>
+                            <p>{drama.episodes} Episodes</p>
                         </div>
                     </section>
 
@@ -119,7 +121,7 @@ export default function InfoPage({ drama }: {
                                 d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
                             ></path>
                         </svg>
-                        <img className={bookmarked ? styles.checkmark : styles.hide} src="checkmark.svg"/>
+                        <img className={bookmarked ? styles.checkmark : styles.hide} src="checkmark.svg" />
                         <span className={styles.text}>{bookmarked ? "REMOVE BOOKMARK" : "ADD BOOKMARK"}</span>
                         <span className={styles.circle}></span>
                         <svg xmlns="http://www.w3.org/2000/svg" className={bookmarked ? styles.hide : styles.arr1} viewBox="0 0 24 24">

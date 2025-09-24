@@ -31,8 +31,8 @@ def scrape_imdb_chinese_dramas():
         title = None
         rank = None
         if title_tag:
-            raw_text = title_tag.get_text(strip=True)  # "12. The Untamed"
-            parts = raw_text.split(". ", 1)  # ["12", "The Untamed"]
+            raw_text = title_tag.get_text(strip=True) 
+            parts = raw_text.split(". ", 1) 
             if len(parts) == 2:
                 rank, title = int(parts[0]), parts[1]
 

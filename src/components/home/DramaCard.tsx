@@ -8,17 +8,19 @@ interface Drama {
     rating: string;
     rank: number;
     genres: string[];
+    episodes: string;
   }
 
 interface DramaCardProps{
     drama: Drama;
+    setSelectDrama: (drama: Drama) => void;
 }
 
 // props: movie name, year, number of episodes, completed/ongoing, rating, theme words(3), leads, rank
-export default function DramaCard({drama}: DramaCardProps){
+export default function DramaCard({ drama, setSelectDrama }: DramaCardProps){
     // const isOngoing = drama.year?.includes("–");
     return(
-        <div>
+        <div onClick={() => setSelectDrama(drama)}>
            
             <div className={styles.card}>
                 {drama.rank < 4 ? (
@@ -34,7 +36,7 @@ export default function DramaCard({drama}: DramaCardProps){
                 <img className={styles.poster} src={drama.image}/>
                 <p className={styles.title}>{drama.title}</p>
                 <div className={styles.nav}>
-                    <span>30 Episodes</span>
+                    <span>{drama.episodes} Episodes</span>
                     <span>{drama.year}</span>
                 </div>
                 {/* {isOngoing ? (<div className={styles.ongoing + " " + styles.status}>Ongoing</div>):

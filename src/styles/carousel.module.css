@@ -18,7 +18,6 @@
 
 .cardSlot {
     flex: 0 0 auto;
-    /* fixed width, no shrink/grow */
     transition: transform 0.3s;
 }
 

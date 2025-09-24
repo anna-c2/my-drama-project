@@ -28,7 +28,6 @@
     pointer-events: none;
     border-bottom-right-radius: 20px;
     border-bottom-left-radius: 20px;
-    /* allows hover/click to pass through */
 }
 
 .poster {
